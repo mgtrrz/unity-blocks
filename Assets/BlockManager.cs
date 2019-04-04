@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class BlockManager : MonoBehaviour {
 
-	public GameObject darkBlock;
-	public GameObject lightBlock;
-
 	public Sprite darkBlockSprite;
 	public Sprite lightBlockSprite;
 
@@ -29,7 +26,17 @@ public class BlockManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (gameStart) {
+		if ( Input.GetKeyDown(KeyCode.LeftArrow)) {
+			blockDropper.transform.position = new Vector3(
+				blockDropper.transform.position.x - blockSize * 2,
+				blockDropper.transform.position.y,
+				0 );
+		}
+		if ( Input.GetKeyDown(KeyCode.RightArrow)) {
+			blockDropper.transform.position = new Vector3(
+				blockDropper.transform.position.x + blockSize * 2,
+				blockDropper.transform.position.y,
+				0 );
 		}
 		
 	}
