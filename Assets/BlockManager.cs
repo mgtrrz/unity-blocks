@@ -73,6 +73,23 @@ public class BlockManager : MonoBehaviour {
 
 		newBlock.transform.parent = blockDropper.transform;
 
+	}
 
+	public void RotateLeft() {
+
+	}
+
+	public void RotateRight() {
+		
+	}
+
+	public void Beat() {
+		Debug.Log("Beat called!");
+		if ( newBlock != null) {
+			newBlock.transform.position = new Vector3(
+					newBlock.transform.position.x,
+					newBlock.transform.position.y - blockSize * 2,
+					0 );
+		}
 	}
 }
